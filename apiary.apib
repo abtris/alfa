@@ -83,7 +83,14 @@ Notes related resources of the **Notes API**
 ### Create a Note [POST]
 + Request 1 (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+    + Headers
+    
+            Content-Type: application/json
+            Prefer: creating
+
+    + Body
+
+            { "title": "Buy cheese and bread for breakfast." }
 
 + Response 201 (application/json)
 
