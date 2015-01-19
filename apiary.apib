@@ -11,7 +11,7 @@ et humus, quotiensque suo. Cognoscet harenas ferunt, quod, ita lumina vertitur
 et sororum. Tuentur sagittis pro sub nunc pendere illis, dei fato peractum.
 Summo voto rigorem pastores.
 
-- Pedibus nec eadem potitur
+- Pedibus nec eadem potitur asa
 - Vidit sorte iaculo nomenque et sacra illa
 - Summis cur tendite adsonat
 - Domum nec molles attonitos figit inhaerebat coeunt
@@ -54,11 +54,11 @@ subit ex nec fatebitur.
 # Group Notes
 Notes related resources of the **Notes API**
 
-## Notes Collection [/notes{?id,testingGroup,collection}]
+## Notes Collection [/notes?id={id}&testingGroup={testtingGroup}&collection={collection}]
 
 + Parameters
 
-    + id (number, required) ... An unique identifier of the message
+    + id = `1` (number, required) ... An unique identifier of the message
     
     + testingGroup = `testing` (optional) ... We have added the query URI template parameter - `limit`. This parameter is used for limiting the number of results returned by some actions on this resource. It does not affect every possible action of this resource therefore we will discuss it only at the particular action level below.
         + values 
@@ -81,37 +81,13 @@ Notes related resources of the **Notes API**
         }]
 
 ### Create a Note [POST]
-+ Request Create a note
++ Request (application/json)
 
-    + Headers
-    
-            Content-Type: application/json
-            Prefer: creating
-
-    + Body
-
-            { "title": "Buy cheese and bread for breakfast." }
+        { "title": "Buy cheese and bread for breakfast." }
 
 + Response 201 (application/json)
 
         { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-+ Request Unable to create note
-
-    + Headers
-    
-            Content-Type: application/json
-            Prefer: testing
-            
-
-    + Body
-
-            { "ti": "Buy cheese and bread for breakfast." }
-
-+ Response 500
-
-        { "error": "can't create record" }
-
 
 ## Note [/notes/{id}]
 A single Note object with all its details
